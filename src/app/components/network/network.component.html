@@ -1,0 +1,13 @@
+<app-training-progress
+  [currentBatch]="currentBatch"
+  [epochs]="epochs"
+  [currentEpoch]="currentEpoch"
+  [numBatches]="numBatches"
+/>
+
+@if (!training) {
+  <div>
+    Training complete! Test accuracy: {{ testAccuracy }}
+  </div>
+  <app-network-details />
+}

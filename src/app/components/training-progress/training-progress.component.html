@@ -1,0 +1,18 @@
+@for (epoch of epochs; track $index) {
+  <div>
+    Epoch {{$index}}:
+    @if (currentEpoch === $index) {
+        <p-progressbar
+          [value]="(currentBatch / numBatches) * 200"
+          [showValue]="false"
+        >
+        </p-progressbar>
+        {{currentBatch}}/{{numBatches}}
+
+    } @else {
+      @if (!isNaN(epoch)) {
+        <span>val. accuracy: {{ epoch.toFixed(2) }}</span>
+      }
+    }
+  </div>
+}
